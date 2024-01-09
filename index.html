@@ -52,6 +52,53 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             
             
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <img src="images/ads.png" alt="fast-texture" width="160" height="160" id="hoverImage2">
+                <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                      var currentIndex = 0;
+                      var images = ["images/ads1.png", "images/ads2.png", "images/ads3.png", "images/ads4.png"];
+                      var interval;
+                      var hoverImage2 = document.getElementById("hoverImage2");
+              
+                      hoverImage2.addEventListener("mouseover", function() {
+                          // Immediately switch to the first image
+                          hoverImage2.src = images[currentIndex];
+                          currentIndex = (currentIndex + 1) % images.length;
+              
+                          // Then start the interval for subsequent images
+                          interval = setInterval(function() {
+                              hoverImage2.src = images[currentIndex];
+                              currentIndex = (currentIndex + 1) % images.length;
+                          }, 1000); // Continue changing images every 1 second
+                      });
+              
+                      hoverImage2.addEventListener("mouseout", function() {
+                          clearInterval(interval);
+                          hoverImage2.src = "images/ads.png"; // Reset to default image
+                          currentIndex = 0; // Reset the index for the next mouseover
+                      });
+                  });
+              </script>
+            </td>
+              <td width="75%" valign="middle">
+                  <span class="papertitle">Autonomous Turret System | Vodka Shooter </span>
+                </a>
+                <br>
+                <strong>Chester Zelaya, Ibad Ali, Shayan Moghaddam, Mohamed Mouhab</strong>
+                <br>
+                <em>Circuit Design, C++, Embedded Systems, NVIDIA Jetson, OpenCV, Solidworks, State Machine</em>
+                <br>
+                <em>Mechatronics Design Capstone Project</em> 2023
+                <br>
+                <p>An automated turret system with 3 D.O.F capable of shooting 10+ feet for the purpose of entertainment and defense.
+                </p>
+                
+              </td>
+            </tr>
+
+            <tr>
             <tr onmouseout="holo_stop()" onmouseover="holo_start()" style="background-color: #ffffd0;">
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
